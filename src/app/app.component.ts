@@ -8,4 +8,6 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'mi-documentacion';
   fecha: number = Date.now();
+  card="card";
+  lista = ["hola", "papu", "de", "papus"];
 }

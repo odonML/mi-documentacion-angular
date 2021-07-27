@@ -1,3 +1,7 @@
 <h1>hola  {{title}}</h1>
 
-<p>{{fecha | date }}</p>
+<p [class]="card">{{fecha | date }}</p>
+
+<div *ngFor="let item of lista">
+    <p>{{item}}</p>
+</div>

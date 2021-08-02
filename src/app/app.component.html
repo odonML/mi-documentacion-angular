@@ -1,7 +1,17 @@
 <h1>hola  {{title}}</h1>
+<img [src]="link" alt="">
+<br/>
 
-<p [class]="card">{{fecha | date }}</p>
+<button (click)="addNumber()">Add</button>
+<br/>
 
+<input type="text" [(ngModel)]="name">
+<p>{{name}}</p>
+
+
+<p [class]="classComponent">{{texto | uppercase }}</p> 
+
+<!-- 
 <div *ngFor="let item of lista">
     <p>{{item}}</p>
-</div>
+</div> -->

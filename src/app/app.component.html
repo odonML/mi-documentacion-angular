@@ -1,17 +1,37 @@
-<h1>hola  {{title}}</h1>
+<h2>Data-Binding:</h2>
+<p>hola {{title}}</p>
 <img [src]="link" alt="">
 <br/>
-
-<button (click)="addNumber()">Add</button>
+<button (click)="event()">Event Binding</button>
 <br/>
-
 <input type="text" [(ngModel)]="name">
 <p>{{name}}</p>
 
+<hr>
 
-<p [class]="classComponent">{{texto | uppercase }}</p> 
+<h2>Pipe:</h2>
+<p>{{texto | uppercase }}</p>
 
-<!-- 
-<div *ngFor="let item of lista">
-    <p>{{item}}</p>
-</div> -->
+<hr>
+
+<h2>Directivas de atributo:</h2>
+<p [ngClass]="['colorBack', 'colorText']">NgClass</p>
+<button (click)="changeClass()" [ngClass]="{positivo: estadoPositivo, negativo: !estadoPositivo}">Preciona y cambio</button>
+
+<p [ngStyle]="styleForNgStyle">NgStyle</p>
+<button (click)="changeStyle()">Cambiar Stilos</button>
+<button (click)="refreshStyle()">Recargar Stilos</button>
+
+<hr>
+
+<h2>Directivas Estructurales</h2>
+<p>NgIf:</p>
+<div *ngIf="active">
+    <p>HOLA MUNDO</p>
+</div>
+<button (click)="inActive()">Desactivar ngIf</button>
+
+<p>NgFor:</p>
+<div *ngFor="let nombre of nombres">
+    <p>{{nombre}}</p>
+</div>

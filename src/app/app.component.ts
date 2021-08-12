@@ -6,17 +6,53 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  lista = ['hola', 'papu', 'de', 'papus'];
-
-  texto="texto en minusculas";
-  
-  classComponent = 'card';
-
-  title = 'mi-documentacion';
+  // ===============================================================
+  // DATA BINDING---------------------------------------------------
+  // ===============================================================
+  title = 'INTERPOLACION';
   link =
     'https://images.pexels.com/photos/8647814/pexels-photo-8647814.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500';
-  name = '';
-  addNumber() {
-    console.log('numero agregado');
+  event() {
+    alert('EVENT BINDING');
   }
+  name = 'TOW-WAY BINDING';
+  // ===============================================================
+  // PIPE-----------------------------------------------------------
+  // ===============================================================
+  texto = 'texto en mayusculas';
+  // ===============================================================
+  // DIRECTIVAS ATRIBUTOS-------------------------------------------
+  // ===============================================================
+  // NgClass--------------------------------------------------------
+  estadoPositivo: boolean = true; //ESTA PROPIEDAD LA UTILIZAREMOS EN NgClass Y NgStyle.
+  clases: Array<String> = ['colorBack', 'colorText'];
+  changeClass() {
+    this.estadoPositivo = !this.estadoPositivo;
+  }
+  // NgStyle--------------------------------------------------------
+  cambiarStyle: boolean = true;
+  styleForNgStyle = { 'background-color': 'purple', color: 'white' };
+  changeStyle() {
+    this.cambiarStyle = !this.cambiarStyle;
+  }
+  refreshStyle() {
+    this.styleForNgStyle = {
+      'background-color': this.cambiarStyle ? 'purple' : 'black',
+      color: 'white',
+    };
+  }
+  // ===============================================================
+  // DIRECTIVAS ESTRUCTURARES --------------------------------------
+  // ===============================================================
+  // NgIf-----------------------------------------------------------
+  active: boolean = true;
+  inActive(){
+    this.active = !this.active;
+  }
+  // NgFor----------------------------------------------------------
+  nombres = ['Oscar', 'Miguel', 'Sergio', 'Alfonso'];
+
+
+
+  
 }
